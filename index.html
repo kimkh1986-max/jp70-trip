@@ -184,11 +184,11 @@
   <!-- 여정 한눈에 -->
   <div class="section-title"><span class="no">01</span>여정 한눈에</div>
   <div class="cal">
-    <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">출국·도착</div></div>
-    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">테마A<br>후지산+요코하마</div></div>
-    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">테마B<br>쇼와공원+도쿄시내</div></div>
-    <div class="cell tbd"><div class="d">9/26</div><div class="w">토</div><div class="l">자유일정<br>(미정)</div></div>
-    <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">새벽 귀국</div></div>
+    <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">D1<br>출국·도착</div></div>
+    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+요코하마</div></div>
+    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내</div></div>
+    <div class="cell tbd"><div class="d">9/26</div><div class="w">토</div><div class="l">D4<br>자유일정(미정)</div></div>
+    <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">D5<br>새벽 귀국</div></div>
   </div>
   <div class="legend">
     <span><i style="background:var(--blue-bg);border:1px solid var(--blue-line);"></i>이동(출입국)</span>
@@ -202,8 +202,8 @@
     <div class="ovhead">🗺 하루씩 눌러서 실제 지도 위 동선 보기 <span class="sm">— 지도는 문서에 내장돼 인터넷 없이도 표시됩니다</span></div>
     <div class="ovdays" id="ovdays">
       <button type="button" class="ovbtn on" data-g="d1">D1 · 도착</button>
-      <button type="button" class="ovbtn" data-g="a">테마A · 후지산+요코하마</button>
-      <button type="button" class="ovbtn" data-g="b">테마B · 쇼와공원+도쿄시내</button>
+      <button type="button" class="ovbtn" data-g="a">D2 · 후지산+요코하마</button>
+      <button type="button" class="ovbtn" data-g="b">D3 · 쇼와공원+도쿄시내</button>
       <button type="button" class="ovbtn" data-g="balt">히간바나(비교후보)</button>
       <button type="button" class="ovbtn" data-g="d5">D5 · 귀국</button>
       <button type="button" class="ovbtn" data-g="all">전체</button>
@@ -247,19 +247,19 @@
       ]},
       a:{bg:'a', color:'var(--green)', dayEl:'day-a', legs:[
         S('숙소(메구로)','06:00',LODGE_LA,LODGE_LO),
-        S('야마나카호','08:00',35.4034,138.8927),
+        S('야마나카호','08:00',35.4083,138.8787,'https://www.google.com/maps/search/?api=1&query=35.4082705,138.8786942'),
         S('5합목','10:00',35.3606,138.7314,'https://maps.app.goo.gl/zf68DdkvDoyFbuQ28'),
         S('호토후도(점심)','점심',35.4867,138.8060,'https://maps.app.goo.gl/boNiWW1MLE51RCzj6'),
         S('스타벅스(커피)','커피',35.4867,138.8060,'https://maps.app.goo.gl/h9MG2Zy2NDosDkqG6'),
         S('오산바시','16~17시',35.4514,139.6489,'https://maps.app.goo.gl/UqtfQuYmU9jCudRh7'),
-        S('와카나(저녁)','저녁',35.4437,139.6380),
+        S('와카나(저녁)','저녁',35.4464,139.6342,'https://www.google.com/maps/search/?api=1&query=35.4463889,139.6341667'),
         S('숙소 복귀','밤',LODGE_LA,LODGE_LO)
       ]},
       b:{bg:'b', color:'var(--gold)', dayEl:'day-b', legs:[
         S('숙소(메구로)','08:00',LODGE_LA,LODGE_LO),
-        S('쇼와기념공원','08:40',35.7025,139.4103),
+        S('쇼와기념공원','08:40',35.7028,139.4036,'https://www.google.com/maps/search/?api=1&query=35.7027716,139.403638'),
         S('가네코야(점심)','점심',35.7056,139.5785,'https://maps.app.goo.gl/s8LzmMBV4pyTv5Jk6'),
-        S('돈키호테(쇼핑)','쇼핑',35.7056,139.5785),
+        S('돈키호테(쇼핑)','쇼핑',35.7057,139.5809,'https://maps.app.goo.gl/7etgZrZ6HUTwpK7n6'),
         S('3스타팬케이크(간식)','간식',35.5723,139.6598,'https://maps.app.goo.gl/M3xLynzVZkDKM9xk8'),
         S('도쿄도청사(전망)','전망',35.6895,139.6917,'https://maps.app.goo.gl/7z1nn63zwohjRwCp8'),
         S('타케신(저녁)','17:30~',35.6703,139.6828,'https://maps.app.goo.gl/7M4yBSBENfKnhEdq9'),
@@ -273,10 +273,10 @@
       ]},
       all:{bg:'all', color:'var(--navy)', nopath:true, dayEl:null, legs:[
         S('숙소(메구로)','',LODGE_LA,LODGE_LO), S('하네다공항','',HANEDA_LA,HANEDA_LO),
-        S('야마나카호','',35.4034,138.8927), S('5합목','',35.3606,138.7314),
+        S('야마나카호','',35.4083,138.8787), S('5합목','',35.3606,138.7314),
         S('후지요시다','',35.4867,138.8060), S('오산바시','',35.4514,139.6489),
-        S('간나이(와카나)','',35.4437,139.6380), S('쇼와기념공원','',35.7025,139.4103),
-        S('가네코야·돈키호테','',35.7056,139.5785), S('3스타팬케이크','',35.5723,139.6598),
+        S('간나이(와카나)','',35.4464,139.6342), S('쇼와기념공원','',35.7028,139.4036),
+        S('가네코야','',35.7056,139.5785), S('돈키호테','',35.7057,139.5809), S('3스타팬케이크','',35.5723,139.6598),
         S('도쿄도청사','',35.6895,139.6917), S('타케신(저녁)','',35.6703,139.6828),
         S('도쿄타워(야경)','',35.6581,139.7451), S('긴차쿠다','',35.9436,139.3773),
         S('권현당공원','',36.0725,139.7211)
@@ -456,7 +456,7 @@
 
   <!-- DAY 1 -->
   <div class="day move" id="day-d1">
-    <div class="dayhead"><span class="daydate">9.23</span><span class="dayweek">수요일</span><span class="type move">이동 · 도착</span></div>
+    <div class="dayhead"><span class="daydate">9.23</span><span class="dayweek">수요일 · D1</span><span class="type move">이동 · 도착</span></div>
     <div class="daysub">출국 + 도쿄 도착 첫날</div>
     <div class="slots">
       <div class="slot"><span class="t">20:30</span><span class="c">인천2 출발 (대한항공)</span></div>
@@ -466,53 +466,62 @@
 
   <!-- THEME: 후지산+요코하마 (완성본) -->
   <div class="day plan" id="day-a">
-    <div class="dayhead"><span class="daydate">9.24</span><span class="dayweek">목요일 · 테마A</span><span class="type plan">동선 확정</span></div>
+    <div class="dayhead"><span class="daydate">9.24</span><span class="dayweek">목요일 · D2</span><span class="type plan">동선 확정</span></div>
     <div class="daysub">후지산 5합목 + 야마나카호 + 요코하마 야경 — 렌트카 하루 코스</div>
     <div class="fx">🗻 야마나카호 → 5합목 → 호토+커피 → 오산바시(야경) → 와카나(저녁) → 숙소 복귀</div>
     <div class="slots">
       <div class="slot"><span class="t">06:00</span><span class="c">숙소 출발 (약 1.5~2시간 소요 감안)</span></div>
-      <div class="slot"><span class="t">08:00</span><span class="c">야마나카호 도착 — 호숫가 산책·후지산 뷰 <span class="desc">아사히가오카 녹지공원 등 호반 산책로</span></span></div>
+      <div class="slot"><span class="t">08:00</span><span class="c">야마나카호 도착 — 호숫가 산책·후지산 뷰 <span class="desc">아사히가오카 호반 녹지공원 등 호반 산책로</span>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=35.4082705,138.8786942" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">09:20</span><span class="c">야마나카호 출발 → 5합목행</span></div>
       <div class="slot"><span class="t">10:00</span><span class="c">후지 스바루라인 5합목 도착 (해발 약 2,300m · 차로 갈 수 있는 최고 지점)
         <span class="desc">등산시즌(7~8월) 아님 — 마이카 규제 없이 렌트카 진입 가능 · 통행료 차량당 약 2,100엔 · 라운지 영업 ~17시</span>
         <a class="map" href="https://maps.app.goo.gl/zf68DdkvDoyFbuQ28" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">점심</span><span class="c">호토후도 히가시코이지점 — 호박 넣은 야마나시 명물 호토(된장우동)
-        <a class="map" href="https://maps.app.goo.gl/boNiWW1MLE51RCzj6" target="_blank" rel="noopener">📍 지도</a></span></div>
+        <a class="map" href="https://maps.app.goo.gl/boNiWW1MLE51RCzj6" target="_blank" rel="noopener">📍 지도</a>
+        <a class="map" href="http://www.houtou-fudou.jp/menu.html" target="_blank" rel="noopener">🍽 메뉴</a></span></div>
       <div class="slot"><span class="t">커피</span><span class="c">스타벅스 후지요시다점 — 테라스에서 후지산 정면 뷰 (오후 늦게 갈수록 햇빛 덜함)
         <a class="map" href="https://maps.app.goo.gl/h9MG2Zy2NDosDkqG6" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">이동</span><span class="c">후지요시다 → 요코하마 (약 110km, 1시간 반~2시간)</span></div>
       <div class="slot"><span class="t">16~17시</span><span class="c">오산바시 부두(크루즈터미널 옥상) — 일몰·야경 · 입장 무료
         <a class="map" href="https://maps.app.goo.gl/UqtfQuYmU9jCudRh7" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">저녁</span><span class="c"><b>와카나(割烹蒲焼わかな)</b> — 창업 1872년 장어 노포, 간나이역 도보 1분, 6명 단체석 가능
-        <span class="desc">예약 전화 045-681-1404 · 주소 神奈川県横浜市中区港町5-20</span></span></div>
+        <span class="desc">예약 전화 045-681-1404 · 주소 神奈川県横浜市中区港町5-20</span>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=35.4463889,139.6341667" target="_blank" rel="noopener">📍 지도</a>
+        <a class="map" href="https://www.yokohama-wakana.com/oshinagaki.php" target="_blank" rel="noopener">🍽 메뉴</a></span></div>
       <div class="slot"><span class="t">밤</span><span class="c">요코하마(간나이) → 숙소(메구로) 복귀, 약 20km·30~40분</span></div>
     </div>
   </div>
 
   <!-- THEME: 쇼와기념공원+도쿄시내 (B+C 통합) -->
   <div class="day plan" id="day-b">
-    <div class="dayhead"><span class="daydate">9.25</span><span class="dayweek">금요일 · 테마B</span><span class="type plan">동선 확정(잠정)</span></div>
+    <div class="dayhead"><span class="daydate">9.25</span><span class="dayweek">금요일 · D3</span><span class="type plan">동선 확정(잠정)</span></div>
     <div class="daysub">쇼와기념공원(코스모스) + 도쿄 시내 — 걷기 최소화, 렌트카 하루 코스</div>
     <div class="fx">🌸 쇼와기념공원 → 가네코야(점심) → 돈키호테(쇼핑) → 3 STARS PANCAKE(간식) → 도쿄도청사(전망) → 돈카츠 타케신(저녁) → 도쿄타워(야경) → 숙소</div>
     <div class="slots">
       <div class="slot"><span class="t">08:00</span><span class="c">숙소 출발 (다치카와까지 약 27km·40분)</span></div>
       <div class="slot"><span class="t">08:40</span><span class="c">쇼와기념공원 도착 — 코스모스 축제 2026 (9/12~10/25)
-        <span class="desc">부지가 넓어 도보 부담 있음 — 원내 유료 파크트레인·렌탈 자전거 이용 시 걷기 크게 줄일 수 있음, 다치카와 게이트 근처 코스모스 구역 위주로 짧게 도는 것도 방법</span></span></div>
+        <span class="desc">부지가 넓어 도보 부담 있음 — 원내 유료 파크트레인·렌탈 자전거 이용 시 걷기 크게 줄일 수 있음, 다치카와 게이트 근처 코스모스 구역 위주로 짧게 도는 것도 방법</span>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=35.7027716,139.403638" target="_blank" rel="noopener">📍 지도(다치카와 게이트)</a></span></div>
       <div class="slot"><span class="t">10:30</span><span class="c">쇼와기념공원 출발 → 키치조지행 (약 15km)</span></div>
       <div class="slot"><span class="t">점심</span><span class="c"><b>가네코야 키치조지점(金子屋 吉祥寺店)</b> — 튀김덮밥(텐동) 전문, 아나고텐동 인기 · 4.2★(1,287)
         <span class="desc">2층이 식당(1층 테이크아웃) · 현금만 가능 · 대기 있을 수 있음 · 1인 ¥1,000~2,000</span>
-        <a class="map" href="https://maps.app.goo.gl/s8LzmMBV4pyTv5Jk6" target="_blank" rel="noopener">📍 지도</a></span></div>
-      <div class="slot"><span class="t">쇼핑</span><span class="c"><b>돈키호테 기치조지역전점</b> — 24시간 영업(4시 마감), 키치조지역 남쪽 출구 도보 3분, 가네코야 바로 근처
-        <span class="desc">매장 전용 주차장 없음 — 인근 코인주차장 이용 필요 · 3.5★(2,173)</span></span></div>
+        <a class="map" href="https://maps.app.goo.gl/s8LzmMBV4pyTv5Jk6" target="_blank" rel="noopener">📍 지도</a>
+        <a class="map" href="https://tabelog.com/tokyo/A1320/A132001/13173834/dtlmenu/photo/" target="_blank" rel="noopener">🍽 메뉴</a></span></div>
+      <div class="slot"><span class="t">쇼핑</span><span class="c"><b>돈키호테 세이유 키치조지점(西友吉祥寺店 2층)</b> — 10:00~23:00, 키치조지역 북쪽 출구 도보 5분
+        <span class="desc">가네코야와 같은 혼초(北口) 방면이라 도보 3~4분으로 바로 이동 가능 — 남쪽 출구의 24시간점(기치조지역전점)보다 동선상 더 적절 · 3.3★(189)</span>
+        <a class="map" href="https://maps.app.goo.gl/7etgZrZ6HUTwpK7n6" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">간식</span><span class="c"><b>3 STARS PANCAKE</b> (무사시코스기) — 수플레 팬케이크 · 4.1★(761)
         <span class="desc">Prima SK 무사시코스기 1층 · 키치조지에서 약 16.5km</span>
-        <a class="map" href="https://maps.app.goo.gl/M3xLynzVZkDKM9xk8" target="_blank" rel="noopener">📍 지도</a></span></div>
+        <a class="map" href="https://maps.app.goo.gl/M3xLynzVZkDKM9xk8" target="_blank" rel="noopener">📍 지도</a>
+        <a class="map" href="https://www.instagram.com/3stars_pancake/" target="_blank" rel="noopener">🍽 메뉴(인스타그램)</a></span></div>
       <div class="slot"><span class="t">전망</span><span class="c"><b>도쿄도청사 전망대</b>(신주쿠, 45층) — 무료 입장, 도쿄 시내 전망
         <span class="desc">1층에서 소지품 검사 후 엘리베이터로 바로 45층 이동 — 도보 거의 없음 · 남측 전망대는 오후 9:30까지 운영(북측은 더 일찍 마감하는 날 있음) · 무사시코스기에서 약 13km</span>
         <a class="map" href="https://maps.app.goo.gl/7z1nn63zwohjRwCp8" target="_blank" rel="noopener">📍 지도</a></span></div>
       <div class="slot"><span class="t">17:30~</span><span class="c"><b>돈카츠 타케신</b>(代々木上原店) — 간장가츠동 명물 · 4.3★(603)
         <span class="desc">오후 5:30 오픈 · 1인 ¥1,000~2,000 · 도청사에서 약 2.3km</span>
-        <a class="map" href="https://maps.app.goo.gl/7M4yBSBENfKnhEdq9" target="_blank" rel="noopener">📍 지도</a></span></div>
+        <a class="map" href="https://maps.app.goo.gl/7M4yBSBENfKnhEdq9" target="_blank" rel="noopener">📍 지도</a>
+        <a class="map" href="https://www.take-shin.co.jp/menu/" target="_blank" rel="noopener">🍽 메뉴</a></span></div>
       <div class="slot"><span class="t">야경</span><span class="c"><b>도쿄타워 야경모습</b> — 전망대에 올라가지 않고 밖(주차장·시바공원 인근)에서 조명 켜진 타워 바라보기
         <span class="desc">타케신에서 약 5.8km · 걷기 최소, 잠깐 세워두고 사진만 찍고 이동 가능 · 숙소(메구로)까지 약 5.1km로 가까움</span>
         <a class="map" href="https://maps.app.goo.gl/UK91yGBojynz1xrT8" target="_blank" rel="noopener">📍 도쿄타워 주차장(東京タワーパーキングセンター)</a></span></div>
@@ -525,7 +534,7 @@
 
   <!-- DAY 5 -->
   <div class="day move" id="day-d5">
-    <div class="dayhead"><span class="daydate">9.27</span><span class="dayweek">일요일</span><span class="type move">이동 · 귀국</span></div>
+    <div class="dayhead"><span class="daydate">9.27</span><span class="dayweek">일요일 · D5</span><span class="type move">이동 · 귀국</span></div>
     <div class="daysub">새벽 귀국편 — 전날 밤 미리 공항 이동 필요</div>
     <div class="slots">
       <div class="slot"><span class="t">01:30</span><span class="c">하네다3 출발 (아시아나)</span></div>
@@ -536,7 +545,7 @@
   <!-- 남은 확인 -->
   <div class="section-title"><span class="no">06</span>남은 확인</div>
   <div class="pending">
-    <div class="pline">☑ 테마 A(후지산·요코하마) → 9/24(목), 테마 B(쇼와기념공원+도쿄시내) → 9/25(금) 확정 — 9/26(토)은 자유일정</div>
+    <div class="pline">☑ 후지산·요코하마 → 9/24(목), 쇼와기념공원+도쿄시내 → 9/25(금) 확정 — 9/26(토)은 자유일정</div>
     <div class="pline">☐ 히간바나(긴차쿠다·권현당) 방면 완전히 제외할지 최종 확정</div>
     <div class="pline">☐ 와카나 6명 단체석 예약 (전화 045-681-1404)</div>
     <div class="pline">☐ 가네코야 키치조지점 웨이팅 대비 — 도착 시간 여유 있게, 현금 준비</div>
