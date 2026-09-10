@@ -395,7 +395,13 @@
       var g = group();
       if(!g.dayEl) return;
       var target = document.getElementById(g.dayEl);
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      if(target){
+        var ty = target.getBoundingClientRect().top + window.pageYOffset - 10;
+        window.scrollTo({top:ty, behavior:'smooth'});
+        setTimeout(function(){
+          if(Math.abs(window.pageYOffset - ty) > 40) window.scrollTo(0, ty);
+        }, 700);
+      }
     });
 
     render();
