@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>추석명절 도쿄여행(칠순)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=IBM+Plex+Mono:wght@600&display=swap">
 <style>
@@ -31,10 +36,12 @@
     --bg:#14181f; --card:#1b2029;
   }
   *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   body{
     margin:0; background:var(--bg); color:var(--ink); line-height:1.6;
     font-family:"Noto Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
-    padding:28px 16px 64px;
+    padding:28px max(16px, env(safe-area-inset-right)) 64px max(16px, env(safe-area-inset-left));
+    overflow-x:hidden;
   }
   .wrap{max-width:860px;margin:0 auto;}
   .mono{font-family:"IBM Plex Mono",monospace;}
@@ -148,6 +155,8 @@
   :root:not([data-theme="light"]) .ovdays button{color:var(--ink);}
   :root[data-theme="dark"] .ovdays button{color:var(--ink);}
   .ovdays button.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  :root:not([data-theme="light"]) .ovdays button.on{color:#fff;}
+  :root[data-theme="dark"] .ovdays button.on{color:#fff;}
   #ovsvg{width:100%;height:auto;display:block;background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
   .ovfoot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;}
   .ovfoot button{
@@ -165,7 +174,8 @@
   .ovlist .ovrow a.map{margin-left:2px;}
   .ovnote{font-size:10.5px;color:var(--faint);margin-top:8px;line-height:1.5;}
 </style>
-
+</head>
+<body>
 <div class="wrap">
 
   <header>
@@ -555,3 +565,5 @@
   <footer>부모님 칠순여행 · 2026.9.23–27 도쿄 · 작성 2026-09-10</footer>
 
 </div>
+</body>
+</html>
