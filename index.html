@@ -98,6 +98,11 @@
   .path::before{content:"";display:block;height:1.5px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px);margin-bottom:6px;}
   .path .plane{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:13px;background:var(--card);padding:0 5px;}
 
+  /* baggage / check-in info */
+  .baginfo{display:flex;flex-direction:column;gap:7px;margin-top:10px;}
+  .brow{display:flex;gap:10px;font-size:13px;align-items:baseline;}
+  .brow .bl{flex:0 0 82px;font-weight:800;color:var(--navy);font-size:12px;}
+
   /* stay + travelers */
   .card2{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px;}
   .card2 .name{font-size:16px;font-weight:800;color:var(--navy);}
@@ -443,8 +448,20 @@
       </div>
     </div>
   </div>
+  <div class="card2" style="margin-top:12px;">
+    <div class="name" style="font-size:14.5px;">🧳 수하물 · 탑승 안내 <span style="font-size:11px;font-weight:600;color:var(--sub);">— 대한항공·아시아나 일반 이코노미 기준</span></div>
+    <div class="baginfo">
+      <div class="brow"><span class="bl">위탁수하물</span><span>1인 1개 · 23kg 이하 (3면 합 158cm 이하)</span></div>
+      <div class="brow"><span class="bl">기내수하물</span><span>1개(10kg 이하 · 3면 합 115cm 이하) + 개인소지품 1개</span></div>
+      <div class="brow"><span class="bl">액체류</span><span>용기당 100ml 이하로, 투명 지퍼백 1개에 모아서</span></div>
+      <div class="brow"><span class="bl">보조배터리</span><span>위탁수하물 절대 금지 — 반드시 기내 휴대</span></div>
+      <div class="brow"><span class="bl">체크인</span><span>출발 2시간 전 공항 도착 권장 · 체크인 마감 출발 60분 전 · 탑승구 마감 출발 10분 전</span></div>
+    </div>
+    <div class="desc" style="margin-top:9px;">※ 프로모션 운임 등 일부 좌석은 수하물이 줄어들 수 있습니다 — 출발 전 각자 예약된 e-티켓에서 정확한 허용량을 한 번씩 확인하는 걸 권장합니다.</div>
+  </div>
   <div class="pending" style="margin-top:12px;">
     <div class="pline">⚠️ 귀국편이 27일 <b>새벽 1:30 출발</b>이라, 26일 밤에는 하네다 공항에 미리 나가 있어야 합니다 — 26일 저녁 일정은 공항 이동으로 비워둘 것</div>
+    <div class="pline">🌙 하네다 제3터미널(국제선)은 24시간 운영되며, 체크인 카운터는 보통 출발 약 6시간 25분 전(전날 저녁 7시경)부터 열립니다 — 항공사·시기에 따라 다를 수 있어 출발 임박 시 아시아나 공지로 재확인 권장</div>
   </div>
 
   <!-- 숙소 & 인원 -->
