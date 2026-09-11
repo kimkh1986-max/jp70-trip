@@ -77,6 +77,7 @@
   .cell .d{font-size:13px;font-weight:800;color:var(--navy);}
   .cell .w{font-size:10.5px;color:var(--sub);}
   .cell .l{font-size:11px;font-weight:700;margin-top:4px;line-height:1.3;word-break:keep-all;}
+  .cell .wx{font-size:10px;font-weight:600;color:var(--sub);margin-top:5px;padding-top:4px;border-top:1px dashed var(--line);}
   .cell.move{background:var(--blue-bg);border-color:var(--blue-line);}.cell.move .l{color:var(--blue);}
   .cell.plan{background:var(--green-bg);border-color:var(--green-line);}.cell.plan .l{color:var(--green);}
   .cell.tbd{background:var(--card);border-style:dashed;}.cell.tbd .l{color:var(--faint);}
@@ -136,6 +137,9 @@
   a.map{display:inline-block;font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-bg);border:1px solid var(--blue-line);border-radius:999px;padding:1px 9px;text-decoration:none;margin-left:4px;white-space:nowrap;}
 
   .fx{background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:10px;padding:9px 13px;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:4px;}
+
+  .daywx{background:var(--blue-bg);border:1px solid var(--blue-line);border-radius:10px;padding:8px 13px;font-size:12.5px;color:var(--blue);font-weight:700;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;}
+  .daywx .wxsub{font-weight:500;color:var(--faint);}
 
   .candidates{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
   .cand{display:flex;gap:10px;align-items:baseline;font-size:13.5px;}
@@ -199,17 +203,18 @@
   <!-- 여정 한눈에 -->
   <div class="section-title"><span class="no">01</span>여정 한눈에</div>
   <div class="cal">
-    <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">D1<br>출국·도착</div></div>
-    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+요코하마</div></div>
-    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내</div></div>
-    <div class="cell tbd"><div class="d">9/26</div><div class="w">토</div><div class="l">D4<br>자유일정(미정)</div></div>
-    <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">D5<br>새벽 귀국</div></div>
+    <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">D1<br>출국·도착</div><div class="wx">🌤️ 28°/21°</div></div>
+    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+요코하마</div><div class="wx">☁️ 27°/22°</div></div>
+    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내</div><div class="wx">🌧️ 27°/21°</div></div>
+    <div class="cell tbd"><div class="d">9/26</div><div class="w">토</div><div class="l">D4<br>자유일정(미정)</div><div class="wx">⛅ 평년 26°/20°</div></div>
+    <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">D5<br>새벽 귀국</div><div class="wx">⛅ 평년 26°/20°</div></div>
   </div>
   <div class="legend">
     <span><i style="background:var(--blue-bg);border:1px solid var(--blue-line);"></i>이동(출입국)</span>
     <span><i style="background:var(--green-bg);border:1px solid var(--green-line);"></i>동선 확정</span>
     <span><i style="background:var(--card);border:1px dashed var(--line);"></i>테마만 정해짐 · 날짜 미배정</span>
   </div>
+  <div class="ovnote" style="margin-top:8px;">🌦 날씨는 <b>2026-09-11 기준</b> 예보 — 9/23~25(도쿄 기준)는 장기예보라 신뢰도 낮고, 9/26~27은 아직 실제 예보 없이 <b>평년값</b>으로 표기했습니다. 9월은 태풍 시즌이라(9/11 기준 접근 중인 태풍은 없음) 출발 7~10일 전(9/16~18경) 꼭 재확인해 주세요.</div>
 
   <!-- 오버뷰 동선 지도 -->
   <div class="section-title"><span class="no">02</span>오버뷰 동선 지도</div>
@@ -485,6 +490,7 @@
   <div class="day move" id="day-d1">
     <div class="dayhead"><span class="daydate">9.23</span><span class="dayweek">수요일 · D1</span><span class="type move">이동 · 도착</span></div>
     <div class="daysub">출국 + 도쿄 도착 첫날</div>
+    <div class="daywx">🌤️ 도쿄 28°/21° <span class="wxsub">· 강수 0% · 9/11 기준 장기예보(변동 가능)</span></div>
     <div class="slots">
       <div class="slot"><span class="t">20:30</span><span class="c">인천2 출발 (대한항공)</span></div>
       <div class="slot"><span class="t">22:50</span><span class="c">하네다3 도착 → 입국심사·수하물 → 숙소(메구로) 이동</span></div>
@@ -495,6 +501,8 @@
   <div class="day plan" id="day-a">
     <div class="dayhead"><span class="daydate">9.24</span><span class="dayweek">목요일 · D2</span><span class="type plan">동선 확정</span></div>
     <div class="daysub">후지산 5합목 + 야마나카호 + 요코하마 야경 — 렌트카 하루 코스</div>
+    <div class="daywx">☁️ 도쿄·요코하마 27°/22° <span class="wxsub">· 강수 25% · 9/11 기준 장기예보(변동 가능)</span></div>
+    <div class="daywx" style="background:var(--card);border-color:var(--line);color:var(--sub);">🏔 야마나카호·후지산 방면(고지대) <span class="wxsub">평년 낮 22~23°/밤 13~14° — 도쿄보다 선선, 흐리면 후지산이 안 보일 수 있어요</span></div>
     <div class="fx">🗻 야마나카호 → 5합목 → 호토+커피 → 오산바시(일몰·야경) → 와카나(저녁) → 숙소 복귀</div>
     <div class="slots">
       <div class="slot"><span class="t">06:00</span><span class="c">숙소 출발 (약 2시간 소요 감안)</span></div>
@@ -530,6 +538,7 @@
   <div class="day plan" id="day-b">
     <div class="dayhead"><span class="daydate">9.25</span><span class="dayweek">금요일 · D3</span><span class="type plan">동선 확정(잠정)</span></div>
     <div class="daysub">쇼와기념공원(코스모스) + 도쿄 시내 — 걷기 최소화, 렌트카 하루 코스</div>
+    <div class="daywx">🌧️ 도쿄 27°/21° <span class="wxsub">· 강수 64%(오전 소나기·뇌우 가능성) · 9/11 기준 장기예보(변동 가능) — 쇼와기념공원 오전 일정은 우산 챙기는 걸 권장</span></div>
     <div class="fx">🌸 쇼와기념공원 → 가네코야(점심) → 돈키호테(쇼핑) → 3 STARS PANCAKE(간식) → 도쿄도청사(일몰·야경 전망) → 돈카츠 타케신(저녁) → 도쿄타워(야경) → 숙소</div>
     <div class="slots">
       <div class="slot"><span class="t">08:00</span><span class="c">숙소 출발 (다치카와까지 약 27km·40분)</span></div>
@@ -574,6 +583,7 @@
   <div class="day move" id="day-d5">
     <div class="dayhead"><span class="daydate">9.27</span><span class="dayweek">일요일 · D5</span><span class="type move">이동 · 귀국</span></div>
     <div class="daysub">새벽 귀국편 — 전날 밤 미리 공항 이동 필요</div>
+    <div class="daywx">⛅ 도쿄 평년 26°/20° <span class="wxsub">· 강수확률 30~40% · 예보 아직 없음(평년값) — 새벽 이동이라 날씨 영향은 적음</span></div>
     <div class="slots">
       <div class="slot"><span class="t">01:30</span><span class="c">하네다3 출발 (아시아나)</span></div>
       <div class="slot"><span class="t">04:10</span><span class="c">인천2 도착</span></div>
@@ -587,7 +597,7 @@
     <div class="pline">☐ 히간바나(긴차쿠다·권현당) 방면 완전히 제외할지 최종 확정</div>
     <div class="pline">☐ 와카나 6명 단체석 예약 (전화 045-681-1404)</div>
     <div class="pline">☐ 가네코야 키치조지점 웨이팅 대비 — 도착 시간 여유 있게, 현금 준비</div>
-    <div class="pline">☐ 날씨 — 9/23 이후는 출발 7~10일 전(9/16~18경) 재확인 권장</div>
+    <div class="pline">☐ 날씨 — 각 일자 카드에 9/11 기준 장기예보/평년값 표기해둠 · 9/23~25는 장기예보라 신뢰도 낮고 9/26~27은 아직 예보 자체가 없음 · 태풍(9/11 기준 접근 중인 것 없음) 포함해서 출발 7~10일 전(9/16~18경) 재확인 필수</div>
   </div>
 
   <footer>부모님 칠순여행 · 2026.9.23–27 도쿄 · 작성 2026-09-10</footer>
