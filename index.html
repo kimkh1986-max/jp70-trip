@@ -123,6 +123,31 @@
   .type.tbd{background:var(--bg);color:var(--faint);border:1px dashed var(--line);}
   .daysub{font-size:12.5px;color:var(--faint);margin-bottom:10px;}
 
+  /* date bar + snap scroller */
+  .datebar{
+    position:sticky; top:0; z-index:30;
+    display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    background:var(--bg); padding:10px 2px 12px; margin:0 0 10px;
+    border-bottom:1px solid var(--line); scrollbar-width:none;
+  }
+  .datebar::-webkit-scrollbar{display:none;}
+  .dbtn{
+    flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:2px;
+    font-family:inherit; font-size:13px; font-weight:800; color:var(--sub);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:7px 15px; cursor:pointer; transition:background .15s,border-color .15s,color .15s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .dbtn span{font-size:10px;font-weight:600;color:var(--faint);}
+  .dbtn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .dbtn.active span{color:rgba(255,255,255,.75);}
+  .daysnap{
+    scroll-snap-type:y proximity; overflow-y:auto; -webkit-overflow-scrolling:touch;
+    max-height:78vh; scroll-padding-top:6px; padding-bottom:6px;
+  }
+  .daysnap .day{scroll-snap-align:start;scroll-snap-stop:normal;}
+  @media (max-width:520px){ .daysnap{max-height:74vh;} }
+
   .slots{display:flex;flex-direction:column;gap:9px;position:relative;margin-top:10px;}
   .slots::before{content:"";position:absolute;left:26px;top:8px;bottom:8px;width:2px;background:var(--line);border-radius:2px;}
   .slot{display:flex;gap:12px;font-size:14px;align-items:baseline;position:relative;z-index:1;}
@@ -480,6 +505,15 @@
   <!-- 일자별 -->
   <div class="section-title"><span class="no">05</span>일자별 일정</div>
 
+  <div class="datebar" id="datebar">
+    <button type="button" class="dbtn" data-target="day-d1">9/23<span>수·D1</span></button>
+    <button type="button" class="dbtn" data-target="day-a">9/24<span>목·D2</span></button>
+    <button type="button" class="dbtn" data-target="day-b">9/25<span>금·D3</span></button>
+    <button type="button" class="dbtn" data-target="day-c">9/26<span>토·D4</span></button>
+    <button type="button" class="dbtn" data-target="day-d5">9/27<span>일·D5</span></button>
+  </div>
+  <div class="daysnap" id="daysnap">
+
   <!-- DAY 1 -->
   <div class="day move" id="day-d1">
     <div class="dayhead"><span class="daydate">9.23</span><span class="dayweek">수요일 · D1</span><span class="type move">이동 · 도착</span></div>
@@ -574,6 +608,19 @@
     </div>
   </div>
 
+  <!-- DAY 4 (자유일정, 협의중) -->
+  <div class="day tbd" id="day-c">
+    <div class="dayhead"><span class="daydate">9.26</span><span class="dayweek">토요일 · D4</span><span class="type tbd">자유일정(협의중)</span></div>
+    <div class="daysub">쇼핑몰·맛집·실내 관광 위주 — 세부 장소·시간 협의 중</div>
+    <div class="daywx">🌤️ 도쿄 28°/20° <span class="wxsub">· 강수 20% · 9/15 기준 2주예보</span></div>
+    <div class="slots">
+      <div class="slot"><span class="t">협의중</span><span class="c">후보 A — <b>에비스 가든플레이스</b>: 숙소(메구로)에서 야마노테선 한 정거장·도보 5분, 쇼핑+맛집(비어스테이션 에비스 등)+도쿄도 사진미술관+38층 무료 전망대
+        <span class="desc">이동이 거의 없어 체력 부담 적음, 온천은 제외(부모님 선호 반영)</span></span></div>
+      <div class="slot"><span class="t">협의중</span><span class="c">후보 B — <b>긴자 방면</b>: 미츠코시·긴자식스·다카시마야 백화점가, 데파치카 식품관, 노포 맛집 다수
+        <span class="desc">선택지는 많지만 숙소에서 20~30분 더 이동 필요</span></span></div>
+    </div>
+  </div>
+
   <!-- DAY 5 -->
   <div class="day move" id="day-d5">
     <div class="dayhead"><span class="daydate">9.27</span><span class="dayweek">일요일 · D5</span><span class="type move">이동 · 귀국</span></div>
@@ -584,6 +631,70 @@
       <div class="slot"><span class="t">04:10</span><span class="c">인천2 도착</span></div>
     </div>
   </div>
+
+  </div><!-- /daysnap -->
+
+  <script>
+  (function(){
+    var snap = document.getElementById('daysnap');
+    var bar = document.getElementById('datebar');
+    if(!snap || !bar) return;
+    var btns = Array.prototype.slice.call(bar.querySelectorAll('.dbtn'));
+    var days = btns.map(function(b){ return document.getElementById(b.getAttribute('data-target')); });
+
+    function setActive(id){
+      btns.forEach(function(b){
+        var on = b.getAttribute('data-target') === id;
+        b.classList.toggle('active', on);
+        if(on){
+          var br = b.getBoundingClientRect(), pr = bar.getBoundingClientRect();
+          if(br.left < pr.left || br.right > pr.right){
+            bar.scrollLeft += (br.left - pr.left) - (pr.width - br.width)/2;
+          }
+        }
+      });
+    }
+
+    var clicking = false, clickTimer = null;
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-target');
+        var el = document.getElementById(id);
+        clicking = true;
+        setActive(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function(){ clicking = false; }, 700);
+      });
+    });
+
+    function posWithin(el){
+      return el.getBoundingClientRect().top - snap.getBoundingClientRect().top + snap.scrollTop;
+    }
+    function updateFromScroll(){
+      if(clicking) return;
+      if(snap.scrollTop + snap.clientHeight >= snap.scrollHeight - 8){
+        setActive(days[days.length-1].id);
+        return;
+      }
+      var top = snap.scrollTop + 12;
+      var current = days[0];
+      for (var i=0;i<days.length;i++){
+        if(days[i] && posWithin(days[i]) <= top) current = days[i];
+      }
+      if(current) setActive(current.id);
+    }
+    var ticking = false;
+    snap.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){ updateFromScroll(); ticking = false; });
+        ticking = true;
+      }
+    });
+
+    setActive('day-d1');
+  })();
+  </script>
 
   <!-- 남은 확인 -->
   <div class="section-title"><span class="no">06</span>남은 확인</div>
