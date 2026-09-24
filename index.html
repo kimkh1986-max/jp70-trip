@@ -184,6 +184,9 @@
   .exp-note{font-size:11.5px;color:var(--faint);margin-top:8px;}
   .exp-cats{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
   .exp-cat{font-size:11.5px;background:var(--gold-bg);border:1px solid var(--gold-line);color:var(--gold);border-radius:999px;padding:4px 11px;}
+  .expbar{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:2px 2px 12px;margin:0 0 4px;scrollbar-width:none;}
+  .expbar::-webkit-scrollbar{display:none;}
+  .exp-empty{font-size:13px;color:var(--faint);text-align:center;padding:28px 10px;}
 
   footer{margin-top:30px;text-align:center;font-size:12px;color:var(--faint);}
 
@@ -239,7 +242,7 @@
   <div class="cal">
     <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">D1<br>출국·도착</div><div class="wx">🌦️ 26°/21°</div></div>
     <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+에노시마+요코하마</div><div class="wx">🌦️ 29°/19°</div></div>
-    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내+시모키타·타워</div><div class="wx">🌦️ 26°/20°</div></div>
+    <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내+시모키타·타워</div><div class="wx">🌦️ 28°/18°</div></div>
     <div class="cell plan"><div class="d">9/26</div><div class="w">토</div><div class="l">D4<br>니혼바시·긴자(실내)</div><div class="wx">🌧️ 21°/18°</div></div>
     <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">D5<br>새벽 귀국</div><div class="wx">🌦️ 22°/19°</div></div>
   </div>
@@ -549,7 +552,7 @@
   <div class="day plan" id="day-b">
     <div class="dayhead"><span class="daydate">9.25</span><span class="dayweek">금요일 · D3</span><span class="type plan">동선 확정</span></div>
     <div class="daysub">쇼와기념공원(코스모스) + 도쿄 시내 + 우나테츠(장어 저녁 17시) + 시모키타자와 무빙아트나이트 + 도쿄타워(외부 야경) — 걷기 최소화, 렌트카 하루 코스</div>
-    <div class="daywx">🌦️ 다치카와(쇼와기념공원) 26°/20° <span class="wxsub">· 강수 90%(비 후 흐림) · 9/23(출발 당일) 기준 최신예보 — 오전 코스모스 산책 시간대 비 가능성이 높습니다. 우산 필수, 상황에 따라 실내 위주 동선(도쿄도청 전망대 등)으로 유연하게 조정할 마음의 준비도 해두세요</span></div>
+    <div class="daywx">🌦️ 도쿄(다치카와~신주쿠) 28°/18° <span class="wxsub">· 강수확률 60%(오전 중 한두 차례 짧은 소나기, 대체로 흐리고 습함) · 9/25(오늘) 기준 최신예보 — 오전 코스모스 산책 시간대에 짧은 소나기 가능성이 있습니다. 우산은 챙기시고, 비가 오면 실내 위주 동선(도쿄도청 전망대 등)으로 유연하게 조정할 마음의 준비도 해두세요</span></div>
     <div class="fx">🌸 쇼와기념공원 → 가네코야(점심) → 돈키호테(쇼핑) → 3 STARS PANCAKE(간식) → 숙소(짐 내려놓기) → 도쿄도청 전망대(무료, 주간) → 우나테츠(저녁 17시, 신주쿠) → 시모키타자와(무빙아트나이트) → 도쿄타워(외부 야경) → 숙소</div>
     <div class="slots">
       <div class="slot"><span class="t">08:00</span><span class="c">숙소 출발 (다치카와까지 약 27km·40분) — 원래(09:00)보다 1시간 이르게 출발, 아침 여유 확보</span></div>
@@ -716,6 +719,12 @@
 
   <!-- 지출내역 -->
   <div class="section-title"><span class="no">04</span>지출내역</div>
+  <div class="expbar" id="expbar">
+    <button type="button" class="dbtn active" data-target="exp-0924">9/24<span>목</span></button>
+    <button type="button" class="dbtn" data-target="exp-0925">9/25<span>금</span></button>
+    <button type="button" class="dbtn" data-target="exp-0926">9/26<span>토</span></button>
+  </div>
+  <div id="exp-0924" class="exp-panel">
   <div class="exp-card">
     <div class="exp-head">
       <div class="exp-title">9/24(목)</div>
@@ -743,8 +752,34 @@
       <span class="exp-cat">입장료 ¥4,800</span>
       <span class="exp-cat">편의점 ¥6,850</span>
     </div>
-    <div class="exp-note">영수증 13건 기준 · 세금 포함 실결제액 · 환율은 정산 시점 매매기준율로 재확인 권장 · 이후 날짜 지출은 정리되는 대로 추가 예정</div>
+    <div class="exp-note">영수증 13건 기준 · 세금 포함 실결제액 · 환율은 정산 시점 매매기준율로 재확인 권장</div>
   </div>
+  </div>
+  <div id="exp-0925" class="exp-panel" style="display:none">
+  <div class="exp-card">
+    <div class="exp-empty">9/25(금) 지출 내역은 아직 정리 전입니다 · 영수증이 모이는 대로 추가 예정</div>
+  </div>
+  </div>
+  <div id="exp-0926" class="exp-panel" style="display:none">
+  <div class="exp-card">
+    <div class="exp-empty">9/26(토) 지출 내역은 아직 정리 전입니다 · 영수증이 모이는 대로 추가 예정</div>
+  </div>
+  </div>
+  <script>
+  (function(){
+    var bar = document.getElementById('expbar');
+    if(!bar) return;
+    var btns = Array.prototype.slice.call(bar.querySelectorAll('.dbtn'));
+    var panels = btns.map(function(b){ return document.getElementById(b.getAttribute('data-target')); });
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-target');
+        btns.forEach(function(x){ x.classList.toggle('active', x===b); });
+        panels.forEach(function(p){ if(p) p.style.display = (p.id===id) ? '' : 'none'; });
+      });
+    });
+  })();
+  </script>
 
   <!-- 항공편 -->
   <div class="section-title"><span class="no">05</span>항공편</div>
