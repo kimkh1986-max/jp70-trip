@@ -231,7 +231,7 @@
   <div class="section-title"><span class="no">01</span>여정 한눈에</div>
   <div class="cal">
     <div class="cell move"><div class="d">9/23</div><div class="w">수</div><div class="l">D1<br>출국·도착</div><div class="wx">🌦️ 26°/21°</div></div>
-    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+시모키타자와</div><div class="wx">🌦️ 28°/20°</div></div>
+    <div class="cell plan"><div class="d">9/24</div><div class="w">목</div><div class="l">D2<br>후지산+에노시마+시모키타자와</div><div class="wx">🌦️ 28°/20°</div></div>
     <div class="cell plan"><div class="d">9/25</div><div class="w">금</div><div class="l">D3<br>쇼와공원+도쿄시내</div><div class="wx">🌦️ 26°/20°</div></div>
     <div class="cell plan"><div class="d">9/26</div><div class="w">토</div><div class="l">D4<br>니혼바시·긴자+요코하마</div><div class="wx">🌧️ 24°/19°</div></div>
     <div class="cell move"><div class="d">9/27</div><div class="w">일</div><div class="l">D5<br>새벽 귀국</div><div class="wx">🌦️ 22°/19°</div></div>
@@ -249,7 +249,7 @@
     <div class="ovhead">🗺 하루씩 눌러서 실제 지도 위 동선 보기 <span class="sm">— 지도는 문서에 내장돼 인터넷 없이도 표시됩니다</span></div>
     <div class="ovdays" id="ovdays">
       <button type="button" class="ovbtn on" data-g="d1">D1 · 도착</button>
-      <button type="button" class="ovbtn" data-g="a">D2 · 후지산+시모키타자와</button>
+      <button type="button" class="ovbtn" data-g="a">D2 · 후지산+에노시마+시모키타</button>
       <button type="button" class="ovbtn" data-g="b">D3 · 쇼와공원+도쿄시내</button>
       <button type="button" class="ovbtn" data-g="balt">히간바나(비교후보)</button>
       <button type="button" class="ovbtn" data-g="d5">D5 · 귀국</button>
@@ -298,7 +298,8 @@
         S('5합목','10:00',35.3606,138.7314,'https://maps.app.goo.gl/zf68DdkvDoyFbuQ28'),
         S('호토후도(점심)','11:50',35.4867,138.8060,'https://maps.app.goo.gl/boNiWW1MLE51RCzj6'),
         S('스타벅스(커피)','13:00',35.4867,138.8060,'https://maps.app.goo.gl/h9MG2Zy2NDosDkqG6'),
-        S('시모키타자와(무빙아트나이트)','16:00',35.6613,139.6683,'https://www.google.com/maps/search/?api=1&query=35.6613,139.6683'),
+        S('에노시마','16:15',35.2998,139.4802,'https://www.google.com/maps/search/?api=1&query=35.2998,139.4802'),
+        S('시모키타자와(무빙아트나이트)','19:00',35.6613,139.6683,'https://www.google.com/maps/search/?api=1&query=35.6613,139.6683'),
         S('숙소 복귀','밤',LODGE_LA,LODGE_LO)
       ]},
       b:{bg:'b', color:'var(--gold)', dayEl:'day-b', legs:[
@@ -320,7 +321,7 @@
       all:{bg:'all', color:'var(--navy)', nopath:true, dayEl:null, legs:[
         S('숙소(메구로)','',LODGE_LA,LODGE_LO), S('하네다공항','',HANEDA_LA,HANEDA_LO),
         S('야마나카호','',35.4083,138.8787), S('5합목','',35.3606,138.7314),
-        S('후지요시다','',35.4867,138.8060), S('시모키타자와','',35.6613,139.6683),
+        S('후지요시다','',35.4867,138.8060), S('에노시마','',35.2998,139.4802), S('시모키타자와','',35.6613,139.6683),
         S('오산바시','',35.4514,139.6489),
         S('간나이(와카나)','',35.4464,139.6342), S('쇼와기념공원','',35.7028,139.4036),
         S('가네코야','',35.7056,139.5785), S('돈키호테','',35.7057,139.5809), S('3스타팬케이크','',35.5723,139.6598),
@@ -536,10 +537,10 @@
   <!-- THEME: 쇼와기념공원+도쿄시내 (B+C 통합) — 9/24로 스왑(날씨 기준) -->
   <div class="day plan" id="day-a">
     <div class="dayhead"><span class="daydate">9.24</span><span class="dayweek">목요일 · D2</span><span class="type plan">동선 확정</span></div>
-    <div class="daysub">후지산 5합목 + 야마나카호 + 시모키타자와 무빙아트나이트 — 렌트카 하루 코스</div>
+    <div class="daysub">후지산 5합목 + 야마나카호 + 에노시마 + 시모키타자와 무빙아트나이트 — 렌트카 하루 코스, 숙소 늦은 복귀 감안</div>
     <div class="daywx">🌦️ 도쿄(시모키타자와 포함) 29°/19° <span class="wxsub">· 강수 70% · 9/23 기준 최신예보 — 오전엔 비, 오후로 갈수록 흐림으로 개선 추세. 저녁 시모키타자와 야외 산책 시간대 우산은 챙기세요</span></div>
     <div class="daywx" style="background:var(--card);border-color:var(--line);color:var(--sub);">🏔 야마나카호·후지산 방면(고지대) <span class="wxsub">흐림 후 맑음 24°/14° · 강수 40% · 9/23 기준 — 후지산 가시성 예보가 아침엔 카와구치코(북) 방면 8/10(Excellent), 하코네(남) 방면 6/10(Good)로 이번 체크 중 가장 좋은 조건. 오전 일찍 방문하시면 후지산이 보일 확률이 꽤 높아요</span></div>
-    <div class="fx">🗻 야마나카호 → 5합목 → 호토+커피 → 시모키타자와(무빙아트나이트, 거대한 달 조형물) → 숙소 복귀</div>
+    <div class="fx">🗻 야마나카호 → 5합목 → 호토+커피 → 에노시마 → 시모키타자와(무빙아트나이트, 거대한 달 조형물) → 숙소 복귀(늦은 밤)</div>
     <div class="slots">
       <div class="slot"><span class="t">06:00</span><span class="c">숙소 출발 (약 2시간 소요 감안)</span></div>
       <div class="slot"><span class="t">08:00</span><span class="c">야마나카호 도착 — 호숫가 산책·후지산 뷰 <span class="desc">아사히가오카 호반 녹지공원 등 호반 산책로 · ~09:20까지</span>
@@ -556,13 +557,17 @@
       <div class="slot"><span class="t">13:00</span><span class="c">커피 — 스타벅스 후지요시다점 — 테라스에서 후지산 정면 뷰
         <span class="desc">오후로 갈수록 햇빛이 덜 들어 테라스 뷰가 더 좋음 · ~13:50까지</span>
         <a class="map" href="https://maps.app.goo.gl/h9MG2Zy2NDosDkqG6" target="_blank" rel="noopener">📍 지도</a></span></div>
-      <div class="slot"><span class="t">13:50</span><span class="c">후지요시다 출발 → 시모키타자와 (약 100km, 1시간 30분~2시간 · 실제 소요시간은 내비게이션으로 재확인 권장)</span></div>
-      <div class="slot"><span class="t">15:30</span><span class="c">시모키타자와 도착 — <b>Moon Art Night Shimokitazawa 2026</b>(무빙아트나이트 시모키타자와) — 지름 7m 거대한 달 조형물(Museum of the Moon) 외 거리 곳곳 설치미술
-        <span class="desc">9/18~10/4 개최, 오후 3시~9시(일부 오후 9시 30분까지) · 오후 8시까지 무료, 8~9시 30분은 티켓 소지자만 · 下北線路街 空き地(시모키타자와역 도보권), 좁은 골목 상점가라 인근 코인 주차장 이용 · 해 진 뒤가 가장 예쁨 · 시모키타자와는 캐주얼 식당가가 많아 저녁도 여기서 가볍게 해결 가능(예약 불필요)</span>
+      <div class="slot"><span class="t">13:50</span><span class="c">후지요시다 출발 → 에노시마 (약 130~140km, 2시간~2시간 30분 · 실제 소요시간은 내비게이션으로 재확인 권장)</span></div>
+      <div class="slot"><span class="t">16:15</span><span class="c">에노시마 도착 — 에노시마신사·전망등대(에노시마 씨캔들)·해변 산책
+        <span class="desc">에노시마대교 건너 섬 진입, 참배길 상점가는 오르막·계단이 있어 어르신은 에스컬레이터(에스카) 이용 권장(유료) · 시라스덮밥 등 해산물이 명물이라 여기서 이른 저녁으로 가볍게 먹어도 좋음 · ~17:45까지</span>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=35.2998,139.4802" target="_blank" rel="noopener">📍 지도</a></span></div>
+      <div class="slot"><span class="t">17:45</span><span class="c">에노시마 출발 → 시모키타자와 (약 50~60km, 1시간~1시간 30분)</span></div>
+      <div class="slot"><span class="t">19:00</span><span class="c">시모키타자와 도착 — <b>Moon Art Night Shimokitazawa 2026</b>(무빙아트나이트 시모키타자와) — 지름 7m 거대한 달 조형물(Museum of the Moon) 외 거리 곳곳 설치미술
+        <span class="desc">9/18~10/4 개최, 오후 3시~9시(일부 오후 9시 30분까지) · 오후 8시까지 무료 — 19시 도착이면 약 1시간 관람 가능, 밤이라 조형물이 가장 예쁘게 보이는 시간대 · 下北線路街 空き地(시모키타자와역 도보권), 좁은 골목 상점가라 인근 코인 주차장 이용 · 저녁을 에노시마에서 안 먹었다면 여기 캐주얼 식당가에서 해결 가능(예약 불필요)</span>
         <a class="map" href="https://www.google.com/maps/search/?api=1&query=35.6613,139.6683" target="_blank" rel="noopener">📍 지도</a>
         <a class="map" href="https://senrogai.com/event/moonartnightshimokitazawa_2026/" target="_blank" rel="noopener">🎫 행사 정보</a></span></div>
-      <div class="slot"><span class="t">19:00</span><span class="c">시모키타자와 출발 → 숙소(메구로), 약 15~20분</span></div>
-      <div class="slot"><span class="t">19:20</span><span class="c">숙소 도착</span></div>
+      <div class="slot"><span class="t">20:00</span><span class="c">시모키타자와 출발 → 숙소(메구로), 약 15~20분</span></div>
+      <div class="slot"><span class="t">20:20</span><span class="c">숙소 도착 <span class="desc">평소보다 늦은 귀가 — 숙소 복귀 후엔 따로 일정 없이 휴식</span></span></div>
     </div>
   </div>
 
@@ -734,6 +739,7 @@
   <div class="pending">
     <div class="pline">☑ 후지산 → 9/24(목), 쇼와기념공원+도쿄시내 → 9/25(금) — 9/23(출발 당일) 최종 재점검에서 후지산 가시성(9/24 아침 8/10 Excellent vs 9/25 1/10 Poor)과 지역별 강수확률이 모두 9/24=후지산 쪽이 유리하게 나와 이 배정으로 확정</div>
     <div class="pline">☑ 9/24(목) 저녁 요코하마 → 9/26(토) 저녁으로 이동, 대신 9/24 저녁은 시모키타자와 무빙아트나이트로 — 시모키타자와가 숙소와 가까워 복귀 동선이 짧고, 9/26 저녁 요코하마는 게이큐선으로 하네다공항까지 직통 28분이라 귀국 동선과 자연스럽게 연결됨. 9/26 저녁 미나토이치야 예약은 진행 전이라 취소 부담 없이 변경</div>
+    <div class="pline">☑ 9/24(목) 스타벅스 이후 에노시마도 추가 — 숙소 늦은 복귀 감안하고 진행하기로 함 · 후지요시다→에노시마(2~2.5시간)→시모키타자와(1~1.5시간)→숙소, 숙소 도착 20시 20분경 예상(교통상황에 따라 더 늦어질 수 있음)</div>
     <div class="pline">☐ 히간바나(긴차쿠다·권현당) 방면 완전히 제외할지 최종 확정</div>
     <div class="pline">☐ 와카나 6명 단체석 예약 — 날짜가 9/26(토) 저녁으로 최종 변경, 전화 045-681-1404로 실제 예약 진행 필요</div>
     <div class="pline">☐ 가네코야 키치조지점 웨이팅 대비 — 도착 시간 여유 있게, 현금 준비</div>
