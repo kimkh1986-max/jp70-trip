@@ -734,6 +734,7 @@
     <button type="button" class="dbtn active" data-target="exp-0924">9/24<span>목</span></button>
     <button type="button" class="dbtn" data-target="exp-0925">9/25<span>금</span></button>
     <button type="button" class="dbtn" data-target="exp-0926">9/26<span>토</span></button>
+    <button type="button" class="dbtn" data-target="exp-total">합계<span>전체</span></button>
   </div>
   <div id="exp-0924" class="exp-panel">
   <div class="exp-card">
@@ -799,6 +800,25 @@
   <div id="exp-0926" class="exp-panel" style="display:none">
   <div class="exp-card">
     <div class="exp-empty">9/26(토) 지출 내역은 아직 정리 전입니다 · 영수증이 모이는 대로 추가 예정</div>
+  </div>
+  </div>
+  <div id="exp-total" class="exp-panel" style="display:none">
+  <div class="exp-card">
+    <div class="exp-head">
+      <div class="exp-title">전체 합계 (9/24~9/25 기준)</div>
+      <div class="exp-total">¥107,770 <span class="krw">(≈₩938,677, 1엔≈8.71원 기준)</span></div>
+    </div>
+    <table class="exp">
+      <tr><th>날짜</th><th class="num">소계(¥)</th><th class="num">원화 환산</th></tr>
+      <tr><td>9/24(목)</td><td class="num">50,727</td><td class="num">≈₩441,832</td></tr>
+      <tr><td>9/25(금)</td><td class="num">57,043</td><td class="num">≈₩496,845</td></tr>
+      <tr><td>9/26(토)</td><td class="num">집계 전</td><td class="num">-</td></tr>
+      <tr class="total"><td>합계</td><td class="num">107,770</td><td class="num">≈₩938,677</td></tr>
+    </table>
+    <div class="exp-cats">
+      <span class="exp-cat">6명 기준 1인당 약 ¥17,962 (≈₩156,449)</span>
+    </div>
+    <div class="exp-note">9/26(토) 지출은 아직 정리 전이라 합계에서 제외됨 — 영수증 정리되는 대로 이 합계도 갱신 예정 · 각 날짜 카드는 정산 시점 매매기준율(9/24는 1엔≈8.63원)로 표시되지만, 이 합계 탭은 일관성을 위해 최신 환율(1엔≈8.71원)로 재계산함</div>
   </div>
   </div>
   <script>
